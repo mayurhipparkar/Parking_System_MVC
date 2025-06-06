@@ -23,6 +23,7 @@
         	margin-top:10px;
         	border: 2px solid cyan;
         	border-radius: 20px;
+        	display:none;
         	
         	
         }
@@ -111,6 +112,8 @@
 
 <script src="${pageContext.request.contextPath}/bootstrapFiles/bootstrap.bundle.min.js"></script>
 <script>
+
+/* this is used to toggle the login and signup page  */
     function toggleForms() {
         const signInForm = document.getElementById('signInForm');
         const signUpForm = document.getElementById('signUpForm');
@@ -124,11 +127,13 @@
         }
     }
     
-   
+  /*  this is used to hide error message when user already exist */
     window.onload = function () {
       const errorMsg = document.getElementById("error-msg");
       if (errorMsg && errorMsg.innerText.trim() !== "") {
+    	  errorMsg.style.display="block";
         setTimeout(function () {
+        	
           errorMsg.classList.add("fade-out");
           setTimeout(() => errorMsg.style.display = "none", 1000); // wait for fade
         }, 2000);

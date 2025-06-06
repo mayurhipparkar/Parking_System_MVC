@@ -19,7 +19,7 @@ public class SignUpServiceImp implements SignUpServiceInterface {
 	//here RestTemplate used to connect the two different project and transfer the data to rest Api.
 	@Override
 	public boolean registerUser(RequestSignUpDTO signUpDto) {
-		String url="http://localhost:8181/signup";
+		String url="http://localhost:8181/main/signup";
 		HttpHeaders headers = new HttpHeaders();
 	    headers.setContentType(MediaType.APPLICATION_JSON);
 	    

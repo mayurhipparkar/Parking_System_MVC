@@ -33,7 +33,7 @@ public class LoginSignUpController {
 			System.out.println("check User status for signUp is it True or false "+userStatus);
 		
 			if(userStatus) {	
-				return "dashboard";
+				return "index";
 			}
 			model.addAttribute("errorMsg","User already exist , login OR duplicate email is not allowed...!");
 			return "signInAndSignUp";
@@ -62,11 +62,9 @@ public class LoginSignUpController {
 			session.setAttribute("userRole",respLoginDto.getRole());
 			
 			System.out.println("session value for Id "+session.getAttribute("userId"));
-			
 			if(respLoginDto!=null) {	
-				return "dashboard";
+				return "index";
 			}
-			
 			model.addAttribute("errorMsg","Something Wrong try again....!");
 			return "signInAndsignUp";
 			
