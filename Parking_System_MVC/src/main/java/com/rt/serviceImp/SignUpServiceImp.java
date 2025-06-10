@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.rt.DTO.RequestSignUpDTO;
-import com.rt.DTO.ResponseSignUpDTO;
 import com.rt.serviceInterface.SignUpServiceInterface;
 
 @Service

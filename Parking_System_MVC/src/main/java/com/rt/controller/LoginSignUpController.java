@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.rt.DTO.RequestLoginDTO;
 import com.rt.DTO.RequestSignUpDTO;
 import com.rt.DTO.ResponseLoginDTO;
-import com.rt.DTO.ResponseSignUpDTO;
 import com.rt.serviceImp.LoginServiceImp;
 import com.rt.serviceImp.SignUpServiceImp;
 
@@ -51,22 +50,20 @@ public class LoginSignUpController {
 		public String loginForm(@ModelAttribute RequestLoginDTO reqLoginDto,Model model,HttpSession session) {
 		
 			ResponseLoginDTO respLoginDto=loginService.loginUser(reqLoginDto);
-			System.out.println(reqLoginDto.getEmail()+" "+reqLoginDto.getPassword());
-			System.out.println("this value returned from API "+respLoginDto.getRole()+" "+respLoginDto.getFullname());
-			
 			//setting session
-			String id = String.valueOf(respLoginDto.getId());
-			session.setAttribute("userId",id);
-			session.setAttribute("userName",respLoginDto.getFullname());
-			session.setAttribute("userEmail",respLoginDto.getEmail());
-			session.setAttribute("userRole",respLoginDto.getRole());
 			
-			System.out.println("session value for Id "+session.getAttribute("userId"));
-			if(respLoginDto!=null) {	
+		
+			if(respLoginDto!=null) {
+				String id = String.valueOf(respLoginDto.getId());
+				session.setAttribute("userId",id);
+				session.setAttribute("userName",respLoginDto.getFullname());
+				session.setAttribute("userEmail",respLoginDto.getEmail());
+				session.setAttribute("userRole",respLoginDto.getRole());
 				return "index";
 			}
+			
 			model.addAttribute("errorMsg","Something Wrong try again....!");
-			return "signInAndsignUp";
+			return "signInAndSignUp";
 			
 		}
 		
