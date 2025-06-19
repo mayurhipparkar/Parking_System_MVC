@@ -1,4 +1,4 @@
-package com.rt.DTO;
+package com.rt.signupAndSignInDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

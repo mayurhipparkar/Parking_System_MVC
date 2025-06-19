@@ -1,8 +1,9 @@
-package com.rt.serviceInterface;
+package com.rt.signinAndSignupServiceInterface;
 
 import org.springframework.stereotype.Service;
 
-import com.rt.DTO.RequestSignUpDTO;
+import com.rt.signupAndSignInDTO.RequestSignUpDTO;
+
 
 @Service
 public interface SignUpServiceInterface {

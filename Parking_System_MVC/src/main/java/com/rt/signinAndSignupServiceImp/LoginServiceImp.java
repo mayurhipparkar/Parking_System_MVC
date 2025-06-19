@@ -1,4 +1,4 @@
-package com.rt.serviceImp;
+package com.rt.signinAndSignupServiceImp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -7,9 +7,9 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.rt.DTO.RequestLoginDTO;
-import com.rt.DTO.ResponseLoginDTO;
-import com.rt.serviceInterface.LoginServiceInterface;
+import com.rt.signinAndSignupServiceInterface.LoginServiceInterface;
+import com.rt.signupAndSignInDTO.RequestLoginDTO;
+import com.rt.signupAndSignInDTO.ResponseLoginDTO;
 @Service
 public class LoginServiceImp implements LoginServiceInterface {
 	@Autowired 

@@ -1,4 +1,4 @@
-package com.rt.serviceImp;
+package com.rt.signinAndSignupServiceImp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -7,8 +7,8 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.rt.DTO.RequestSignUpDTO;
-import com.rt.serviceInterface.SignUpServiceInterface;
+import com.rt.signinAndSignupServiceInterface.SignUpServiceInterface;
+import com.rt.signupAndSignInDTO.RequestSignUpDTO;
 
 @Service
 public class SignUpServiceImp implements SignUpServiceInterface {
@@ -27,6 +27,8 @@ public class SignUpServiceImp implements SignUpServiceInterface {
 		
 		return userStatus; 
 	}
+
+	
 
 	
 

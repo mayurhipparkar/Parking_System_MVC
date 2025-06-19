@@ -2,32 +2,37 @@
     pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
-<!-- Mirrored from codervent.com/rocker/demo/vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 May 2025 08:47:53 GMT -->
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--favicon-->
-	<link rel="icon" href="resources/assets/images/favicon-32x32.png" type="image/png"/>
+	<link rel="icon" href="${pageContext.request.contextPath}/resources/assets/images/favicon-32x32.png" type="image/png"/>
 	<!--plugins-->
-	<link href="resources/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>
-	<link href="resources/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
-	<link href="resources/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
-	<link href="resources/assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet"/>
+	<link href="${pageContext.request.contextPath}/resources/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>
+	<link href="${pageContext.request.contextPath}/resources/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+	<link href="${pageContext.request.contextPath}/resources/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+	<link href="${pageContext.request.contextPath}/resources/assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet"/>
 	<!-- loader-->
-	<link href="resources/assets/css/pace.min.css" rel="stylesheet"/>
-	<script src="resources/assets/js/pace.min.js"></script>
+	<link href="${pageContext.request.contextPath}/resources/assets/css/pace.min.css" rel="stylesheet"/>
+	<script src="${pageContext.request.contextPath}/resources/assets/js/pace.min.js"></script>
 	<!-- Bootstrap CSS -->
-	<link href="resources/assets/css/bootstrap.min.css" rel="stylesheet">
-	<link href="resources/assets/css/bootstrap-extended.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet">
-	<link href="resources/assets/css/app.css" rel="stylesheet">
-	<link href="resources/assets/css/icons.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/assets/css/bootstrap-extended.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/assets/css/app.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/assets/css/icons.css" rel="stylesheet">
 	<!-- Theme Style CSS -->
-	<link rel="stylesheet" href="resources/assets/css/dark-theme.css"/>
-	<link rel="stylesheet" href="resources/assets/css/semi-dark.css"/>
-	<link rel="stylesheet" href="resources/assets/css/header-colors.css"/>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/dark-theme.css"/>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/semi-dark.css"/>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/header-colors.css"/>
 	<title>Vehicle Parking System</title>
+	<style>
+		.bx-checkbox-square{
+			margin-left:15px;
+		}
+		
+	</style>
 </head>
 
 <body>
@@ -37,7 +42,7 @@
 		<div class="sidebar-wrapper" data-simplebar="true">
 			<div class="sidebar-header">
 				<div>
-					<img src="resources/assets/images/products/parking_logo3.png" class="logo-icon" alt="logo icon">
+					<img src="${pageContext.request.contextPath}/resources/assets/images/products/parking_logo3.png" class="logo-icon" alt="logo icon">
 				</div>
 				<div>
 					<h4 class="logo-text">Parking<sup>system</sup></h4>
@@ -47,131 +52,123 @@
 			<ul class="metismenu" id="menu">
 				<li>
 					<a href="javascript:;">
-						<div class="parent-icon"><i class='bx bx-home-alt'></i>
+						<div class="parent-icon"><span>🏠</span>
 						</div>
 						<div class="menu-title">Home</div>
 					</a>
 				</li>
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="bx bx-category"></i>
+						<div class="parent-icon"><span>📝</span></i>
 						</div>
-						<div class="menu-title">Application</div>
+						<div class="menu-title">Vehicle Entry</div>
 					</a>
 					<ul>
-						<li> <a href="app-emailbox.html"><i class='bx bx-radio-circle'></i>Email</a>
+						<li> <a href="${pageContext.request.contextPath}/vehicle/addVehicleForm"><i class='bx bx-radio-circle'></i>Add Vehicle</a>
 						</li>
-						<li> <a href="app-chat-box.html"><i class='bx bx-radio-circle'></i>Chat Box</a>
+						<li> <a href="app-chat-box.html"><i class='bx bx-radio-circle'></i>Delete Vehicle</a>
 						</li>
-						<li> <a href="app-file-manager.html"><i class='bx bx-radio-circle'></i>File Manager</a>
+						<li> <a href="app-file-manager.html"><i class='bx bx-radio-circle'></i>Update Vehicle</a>
 						</li>
-						<li> <a href="app-contact-list.html"><i class='bx bx-radio-circle'></i>Contatcs</a>
+						<li> <a href="${pageContext.request.contextPath}/list/vehicleList"><i class='bx bx-radio-circle'></i>Two Wheeler List</a>
 						</li>
-						<li> <a href="app-to-do.html"><i class='bx bx-radio-circle'></i>Todo List</a>
+						<li> <a href="app-contact-list.html"><i class='bx bx-radio-circle'></i>Four Wheeler List</a>
 						</li>
-						<li> <a href="app-invoice.html"><i class='bx bx-radio-circle'></i>Invoice</a>
-						</li>
-						<li> <a href="app-fullcalender.html"><i class='bx bx-radio-circle'></i>Calendar</a>
-						</li>
+						
 					</ul>
 				</li>
-				<li>
-					<a href="widgets.html">
-						<div class="parent-icon"><i class='bx bx-cookie'></i>
-						</div>
-						<div class="menu-title">Widgets</div>
-					</a>
-				</li>
+				
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class='bx bx-cart'></i>
+						<div class="parent-icon"><span>👮</span></i>
 						</div>
-						<div class="menu-title">eCommerce</div>
+						<div class="menu-title">Guard</div>
 					</a>
 					<ul>
-						<li> <a href="ecommerce-products.html"><i class='bx bx-radio-circle'></i>Products</a>
+						<li> <a href="ecommerce-products.html"><i class='bx bx-radio-circle'></i>Add Guard</a>
 						</li>
-						<li> <a href="ecommerce-products-details.html"><i class='bx bx-radio-circle'></i>Product Details</a>
+						<li> <a href="ecommerce-products-details.html"><i class='bx bx-radio-circle'></i>Update Guard</a>
 						</li>
-						<li> <a href="ecommerce-add-new-products.html"><i class='bx bx-radio-circle'></i>Add New Products</a>
+						<li> <a href="ecommerce-add-new-products.html"><i class='bx bx-radio-circle'></i>Delete Guard</a>
 						</li>
-						<li> <a href="ecommerce-orders.html"><i class='bx bx-radio-circle'></i>Orders</a>
+						<li> <a href="ecommerce-orders.html"><i class='bx bx-radio-circle'></i>View Guard List</a>
 						</li>
 					</ul>
-				</li>
+				</li> 
 				<li>
-					<a class="has-arrow" href="javascript:;">
-						<div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><span>🏍️</span>
 						</div>
-						<div class="menu-title">Components</div>
+						<div class="menu-title">Two Wheeler Slot</div>
 					</a>
 					<ul>
-						<li> <a href="component-alerts.html"><i class='bx bx-radio-circle'></i>Alerts</a>
+						<li> <a href="ecommerce-products.html"><i class='bx bx-radio-circle'></i>Create Slot </a>
 						</li>
-						<li> <a href="component-accordions.html"><i class='bx bx-radio-circle'></i>Accordions</a>
+						<li> <a href="ecommerce-products-details.html"><i class='bx bx-radio-circle'></i>Remove Slot</a>
 						</li>
-						<li> <a href="component-badges.html"><i class='bx bx-radio-circle'></i>Badges</a>
+						<li> <a href="ecommerce-add-new-products.html"><i class='bx bx-radio-circle'></i>Update Slot</a>
 						</li>
-						<li> <a href="component-buttons.html"><i class='bx bx-radio-circle'></i>Buttons</a>
-						</li>
-						<li> <a href="component-cards.html"><i class='bx bx-radio-circle'></i>Cards</a>
-						</li>
-						<li> <a href="component-carousels.html"><i class='bx bx-radio-circle'></i>Carousels</a>
-						</li>
-						<li> <a href="component-list-groups.html"><i class='bx bx-radio-circle'></i>List Groups</a>
-						</li>
-						<li> <a href="component-media-object.html"><i class='bx bx-radio-circle'></i>Media Objects</a>
-						</li>
-						<li> <a href="component-modals.html"><i class='bx bx-radio-circle'></i>Modals</a>
-						</li>
-						<li> <a href="component-navs-tabs.html"><i class='bx bx-radio-circle'></i>Navs & Tabs</a>
-						</li>
-						<li> <a href="component-navbar.html"><i class='bx bx-radio-circle'></i>Navbar</a>
-						</li>
-						<li> <a href="component-paginations.html"><i class='bx bx-radio-circle'></i>Pagination</a>
-						</li>
-						<li> <a href="component-popovers-tooltips.html"><i class='bx bx-radio-circle'></i>Popovers & Tooltips</a>
-						</li>
-						<li> <a href="component-progress-bars.html"><i class='bx bx-radio-circle'></i>Progress</a>
-						</li>
-						<li> <a href="component-spinners.html"><i class='bx bx-radio-circle'></i>Spinners</a>
-						</li>
-						<li> <a href="component-notifications.html"><i class='bx bx-radio-circle'></i>Notifications</a>
-						</li>
-						<li> <a href="component-avtars-chips.html"><i class='bx bx-radio-circle'></i>Avatrs & Chips</a>
+						<li> <a href="ecommerce-orders.html"><i class='bx bx-radio-circle'></i>View Slot List</a>  
 						</li>
 					</ul>
-				</li>
+				</li> 
 				<li>
-					<a class="has-arrow" href="javascript:;">
-						<div class="parent-icon"><i class="bx bx-repeat"></i>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><span>🚗</span>
 						</div>
-						<div class="menu-title">Content</div>
+						<div class="menu-title">Four Wheeler Slot</div>
 					</a>
 					<ul>
-						<li> <a href="content-grid-system.html"><i class='bx bx-radio-circle'></i>Grid System</a>
+						<li> <a href="ecommerce-products.html"><i class='bx bx-radio-circle'></i>Create Slot </a>
 						</li>
-						<li> <a href="content-typography.html"><i class='bx bx-radio-circle'></i>Typography</a>
+						<li> <a href="ecommerce-products-details.html"><i class='bx bx-radio-circle'></i>Remove Slot</a>
 						</li>
-						<li> <a href="content-text-utilities.html"><i class='bx bx-radio-circle'></i>Text Utilities</a>
+						<li> <a href="ecommerce-add-new-products.html"><i class='bx bx-radio-circle'></i>Update Slot</a>
+						</li>
+						<li> <a href="ecommerce-orders.html"><i class='bx bx-radio-circle'></i>View Slot List</a>  
 						</li>
 					</ul>
-				</li>
+				</li> 
 				<li>
-					<a class="has-arrow" href="javascript:;">
-						<div class="parent-icon"> <i class="bx bx-donate-blood"></i>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><span>🅿️</span></i>
 						</div>
-						<div class="menu-title">Icons</div>
+						<div class="menu-title">Manage Parking</div>
 					</a>
 					<ul>
-						<li> <a href="icons-line-icons.html"><i class='bx bx-radio-circle'></i>Line Icons</a>
+					<li>
+					<a href="javascript:;" class="has-arrow has-sub-arrow">
+					<i class='bx bx-checkbox-square'></i>Two Wheeler Slot
+					</a>
+					<ul><li> <a href="ecommerce-products.html"><i class='bx bx-radio-circle'></i>Assign Slot</a>
 						</li>
-						<li> <a href="icons-boxicons.html"><i class='bx bx-radio-circle'></i>Boxicons</a>
+						<li> <a href="ecommerce-products-details.html"><i class='bx bx-radio-circle'></i>Delete slot</a>
 						</li>
-						<li> <a href="icons-feather-icons.html"><i class='bx bx-radio-circle'></i>Feather Icons</a>
+						<li> <a href="ecommerce-add-new-products.html"><i class='bx bx-radio-circle'></i>View Engaged slot</a>
+						</li>
+						<li> <a href="ecommerce-orders.html"><i class='bx bx-radio-circle'></i>View Remaining slot</a>
+						</li></ul>
+						</li>
+						
+					<li>
+					<a href="javascript:;" class="has-arrow has-sub-arrow">
+					<i class='bx bx-checkbox-square'></i>Four Wheeler Slot
+					</a>
+					<ul>
+					<li> <a href="ecommerce-products.html"><i class='bx bx-radio-circle'></i>Assign Slot</a>
+						</li>
+						<li> <a href="ecommerce-products-details.html"><i class='bx bx-radio-circle'></i>Delete slot</a>
+						</li>
+						<li> <a href="ecommerce-add-new-products.html"><i class='bx bx-radio-circle'></i>View Engaged slot</a>
+						</li>
+						<li> <a href="ecommerce-orders.html"><i class='bx bx-radio-circle'></i>View Remaining slot</a>
+						</li></ul>
 						</li>
 					</ul>
-				</li>
+						
+					
+				</li> 
+				
 				<li>
 					<a href="https://themeforest.net/user/codervent" target="_blank">
 						<div class="parent-icon"><i class="bx bx-support"></i>
@@ -208,125 +205,13 @@
 								<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" data-bs-toggle="dropdown"><span class="alert-count">7</span>
 									<i class='bx bx-bell'></i>
 								</a>
-								<div class="dropdown-menu dropdown-menu-end">
+								<div class="dropdown-menu dropdown-menu-end header-notifications-list">
 									<a href="javascript:;">
 										<div class="msg-header">
 											<p class="msg-header-title">Notifications</p>
-											<p class="msg-header-badge">8 New</p>
+											
 										</div>
-									</a>
-									<div class="header-notifications-list">
-										<a class="dropdown-item" href="javascript:;">
-											<div class="d-flex align-items-center">
-												<div class="user-online">
-													<img src="assets/images/avatars/avatar-1.png" class="msg-avatar" alt="user avatar">
-												</div>
-												<div class="flex-grow-1">
-													<h6 class="msg-name">Daisy Anderson<span class="msg-time float-end">5 sec
-												ago</span></h6>
-													<p class="msg-info">The standard chunk of lorem</p>
-												</div>
-											</div>
-										</a>
-										<a class="dropdown-item" href="javascript:;">
-											<div class="d-flex align-items-center">
-												<div class="notify bg-light-danger text-danger">dc
-												</div>
-												<div class="flex-grow-1">
-													<h6 class="msg-name">New Orders <span class="msg-time float-end">2 min
-												ago</span></h6>
-													<p class="msg-info">You have recived new orders</p>
-												</div>
-											</div>
-										</a>
-										<a class="dropdown-item" href="javascript:;">
-											<div class="d-flex align-items-center">
-												<div class="user-online">
-													<img src="assets/images/avatars/avatar-2.png" class="msg-avatar" alt="user avatar">
-												</div>
-												<div class="flex-grow-1">
-													<h6 class="msg-name">Althea Cabardo <span class="msg-time float-end">14
-												sec ago</span></h6>
-													<p class="msg-info">Many desktop publishing packages</p>
-												</div>
-											</div>
-										</a>
-										<a class="dropdown-item" href="javascript:;">
-											<div class="d-flex align-items-center">
-												<div class="notify bg-light-success text-success">
-													<img src="assets/images/app/outlook.png" width="25" alt="user avatar">
-												</div>
-												<div class="flex-grow-1">
-													<h6 class="msg-name">Account Created<span class="msg-time float-end">28 min
-												ago</span></h6>
-													<p class="msg-info">Successfully created new email</p>
-												</div>
-											</div>
-										</a>
-										<a class="dropdown-item" href="javascript:;">
-											<div class="d-flex align-items-center">
-												<div class="notify bg-light-info text-info">Ss
-												</div>
-												<div class="flex-grow-1">
-													<h6 class="msg-name">New Product Approved <span
-												class="msg-time float-end">2 hrs ago</span></h6>
-													<p class="msg-info">Your new product has approved</p>
-												</div>
-											</div>
-										</a>
-										<a class="dropdown-item" href="javascript:;">
-											<div class="d-flex align-items-center">
-												<div class="user-online">
-													<img src="assets/images/avatars/avatar-4.png" class="msg-avatar" alt="user avatar">
-												</div>
-												<div class="flex-grow-1">
-													<h6 class="msg-name">Katherine Pechon <span class="msg-time float-end">15
-												min ago</span></h6>
-													<p class="msg-info">Making this the first true generator</p>
-												</div>
-											</div>
-										</a>
-										<a class="dropdown-item" href="javascript:;">
-											<div class="d-flex align-items-center">
-												<div class="notify bg-light-success text-success"><i class='bx bx-check-square'></i>
-												</div>
-												<div class="flex-grow-1">
-													<h6 class="msg-name">Your item is shipped <span class="msg-time float-end">5 hrs
-												ago</span></h6>
-													<p class="msg-info">Successfully shipped your item</p>
-												</div>
-											</div>
-										</a>
-										<a class="dropdown-item" href="javascript:;">
-											<div class="d-flex align-items-center">
-												<div class="notify bg-light-primary">
-													<img src="assets/images/app/github.png" width="25" alt="user avatar">
-												</div>
-												<div class="flex-grow-1">
-													<h6 class="msg-name">New 24 authors<span class="msg-time float-end">1 day
-												ago</span></h6>
-													<p class="msg-info">24 new authors joined last week</p>
-												</div>
-											</div>
-										</a>
-										<a class="dropdown-item" href="javascript:;">
-											<div class="d-flex align-items-center">
-												<div class="user-online">
-													<img src="assets/images/avatars/avatar-8.png" class="msg-avatar" alt="user avatar">
-												</div>
-												<div class="flex-grow-1">
-													<h6 class="msg-name">Peter Costanzo <span class="msg-time float-end">6 hrs
-												ago</span></h6>
-													<p class="msg-info">It was popularised in the 1960s</p>
-												</div>
-											</div>
-										</a>
-									</div>
-									<a href="javascript:;">
-										<div class="text-center msg-footer">
-											<button class="btn btn-primary w-100">View All Notifications</button>
-										</div>
-									</a>
+									</a>	
 								</div>
 							</li>
 							<li class="nav-item dropdown dropdown-large">
@@ -342,7 +227,7 @@
 					</div>
 					<div class="user-box dropdown px-3">
 						<a class="d-flex align-items-center nav-link dropdown-toggle gap-3 dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							<img src="assets/images/avatars/avatar-2.png" class="user-img" alt="user avatar">
+							<img src="${pageContext.request.contextPath}/assets/images/avatars/avatar-2.png" class="user-img" alt="user avatar">
 							<div class="user-info">
 								<p class="user-name mb-0">Pauline Seitz</p>
 								<p class="designattion mb-0">Web Designer</p>

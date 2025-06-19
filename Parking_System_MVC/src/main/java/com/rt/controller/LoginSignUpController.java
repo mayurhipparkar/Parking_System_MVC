@@ -6,11 +6,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.rt.DTO.RequestLoginDTO;
-import com.rt.DTO.RequestSignUpDTO;
-import com.rt.DTO.ResponseLoginDTO;
-import com.rt.serviceImp.LoginServiceImp;
-import com.rt.serviceImp.SignUpServiceImp;
+import com.rt.signinAndSignupServiceImp.LoginServiceImp;
+import com.rt.signinAndSignupServiceImp.SignUpServiceImp;
+import com.rt.signupAndSignInDTO.RequestLoginDTO;
+import com.rt.signupAndSignInDTO.RequestSignUpDTO;
+import com.rt.signupAndSignInDTO.ResponseLoginDTO;
 
 import jakarta.servlet.http.HttpSession;
 

@@ -499,6 +499,34 @@ a {
 }
 
 
+.metismenu .has-sub-arrow:after {
+
+	position: absolute;
+
+	content: "";
+
+	width: .4em;
+
+	height: .4em;
+
+	border-style: solid;
+
+	border-width: 1.2px 0 0 1.2px;
+
+	border-color: initial;
+
+	right: 25px;
+
+	transform: rotate(-45deg) translateY(-50%);
+
+	transform-origin: top;
+
+	top: 50%;
+
+	transition: all .3s ease-out
+}
+
+
 
 @media screen and (min-width:1025px) {
 
