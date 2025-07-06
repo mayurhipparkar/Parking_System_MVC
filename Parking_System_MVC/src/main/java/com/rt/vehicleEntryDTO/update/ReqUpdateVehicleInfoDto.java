@@ -1,7 +1,8 @@
-package com.rt.vehicleEntryDTO;
+package com.rt.vehicleEntryDTO.update;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,12 +10,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RespAddVehicleDto {
+public class ReqUpdateVehicleInfoDto {
+	private int id;
 	private String vehicleType;
 	private String vehicleNumber;
 	private String ownerName;
 	private String contactNumber;
 	private LocalDate entryDate;
 	private LocalTime entryTime;
-
+	private int userId;
 }

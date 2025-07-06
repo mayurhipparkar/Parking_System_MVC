@@ -64,15 +64,13 @@
 						<div class="menu-title">Vehicle Entry</div>
 					</a>
 					<ul>
-						<li> <a href="${pageContext.request.contextPath}/vehicle/addVehicleForm"><i class='bx bx-radio-circle'></i>Add Vehicle</a>
+						<li> <a href="${pageContext.request.contextPath}/vehicle/add-vehicle-Form"><i class='bx bx-radio-circle'></i>Add Vehicle</a>
 						</li>
-						<li> <a href="app-chat-box.html"><i class='bx bx-radio-circle'></i>Delete Vehicle</a>
+						<li> <a href="${pageContext.request.contextPath}/update-delete/update-vehicle-form"><i class='bx bx-radio-circle'></i>Update Vehicle</a>
 						</li>
-						<li> <a href="app-file-manager.html"><i class='bx bx-radio-circle'></i>Update Vehicle</a>
+						<li> <a href="${pageContext.request.contextPath}/list/twoWheeler-list/two wheeler"><i class='bx bx-radio-circle'></i>Two Wheeler List</a>
 						</li>
-						<li> <a href="${pageContext.request.contextPath}/list/vehicleList"><i class='bx bx-radio-circle'></i>Two Wheeler List</a>
-						</li>
-						<li> <a href="app-contact-list.html"><i class='bx bx-radio-circle'></i>Four Wheeler List</a>
+						<li> <a href="${pageContext.request.contextPath}/list/fourWheeler-list/four wheeler"><i class='bx bx-radio-circle'></i>Four Wheeler List</a>
 						</li>
 						
 					</ul>

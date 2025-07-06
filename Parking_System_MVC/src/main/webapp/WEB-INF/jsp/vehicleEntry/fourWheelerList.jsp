@@ -5,19 +5,18 @@
 <head>
     <title>Vehicle Entry List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<style>
+    <style>
     table.table tBody,table.table tr, table.table td {
         padding:4px 8px;
     }
 </style>
 </head>
-
 <body>
 <div class="container mt-5">
 <p class="text-dark mt-1 mb-0">Total Records for <strong>${type}</strong>: <strong>${totalItems}</strong></p>
     <div class="card shadow-lg">
         <div class="card-header bg-primary text-white">
-            <h4 class="mb-0">Two Wheeler Entry List</h4>
+            <h4 class="mb-0">Four Wheeler Entry List</h4>
             
         </div>
         <div class="card-body">
@@ -66,7 +65,7 @@
                     <c:forEach begin="0" end="${totalPages - 1}" var="i">
                         <li class="page-item ${i == currentPage ? 'active' : ''}">
                             <a class="page-link"
-                               href="${pageContext.request.contextPath}/list/twoWheeler-list/${type}?page=${i}&size=5">
+                               href="${pageContext.request.contextPath}/list/fourWheeler-list/${type}?page=${i}&size=5">
                                 ${i + 1}
                             </a>
                         </li>

@@ -1,11 +1,11 @@
 package com.rt.vehicleEntryServiceInterface;
 
-import java.util.List;
+import java.util.Map;
 
-import com.rt.vehicleEntryDTO.RespEnteredVehicleListDTO;
 
 public interface EnteredVehicleListInterface {
-	List<RespEnteredVehicleListDTO> twoWheelerList();
-	List<RespEnteredVehicleListDTO>  fourWheelerList();
+
+	Map<String, Object> getVehicleListByType(int page, int size, String vehicleType);
+	
 
 }

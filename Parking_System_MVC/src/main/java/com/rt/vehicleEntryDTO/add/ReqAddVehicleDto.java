@@ -1,4 +1,4 @@
-package com.rt.vehicleEntryDTO;
+package com.rt.vehicleEntryDTO.add;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -23,5 +23,5 @@ public class ReqAddVehicleDto {
 	
 	 @DateTimeFormat(pattern = "HH:mm")
 	private LocalTime entryTime;
-	 private int sessionLogedUserId;
+	 private int userId;
 }

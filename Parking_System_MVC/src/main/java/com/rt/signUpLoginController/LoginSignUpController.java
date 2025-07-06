@@ -1,4 +1,4 @@
-package com.rt.controller;
+package com.rt.signUpLoginController;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -52,8 +52,7 @@ public class LoginSignUpController {
 			ResponseLoginDTO respLoginDto=loginService.loginUser(reqLoginDto);
 			//setting session
 			
-		
-			if(respLoginDto!=null) {
+			if(respLoginDto!=null) { 
 				String id = String.valueOf(respLoginDto.getId());
 				session.setAttribute("userId",id);
 				session.setAttribute("userName",respLoginDto.getFullname());
