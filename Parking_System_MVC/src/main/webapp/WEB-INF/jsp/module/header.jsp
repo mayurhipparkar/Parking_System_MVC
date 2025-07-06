@@ -51,7 +51,7 @@
 			<!--navigation-->
 			<ul class="metismenu" id="menu">
 				<li>
-					<a href="javascript:;">
+					<a href="${pageContext.request.contextPath}/home">
 						<div class="parent-icon"><span>🏠</span>
 						</div>
 						<div class="menu-title">Home</div>

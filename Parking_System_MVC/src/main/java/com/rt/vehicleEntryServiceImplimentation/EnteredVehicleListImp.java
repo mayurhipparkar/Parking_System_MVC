@@ -1,5 +1,6 @@
 package com.rt.vehicleEntryServiceImplimentation;
 
+import java.time.LocalDate;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,15 @@ public class EnteredVehicleListImp implements EnteredVehicleListInterface{
 	private RestTemplate restTemplate;
 	
 	@Override
-	public Map<String, Object> getVehicleListByType(int page, int size, String vehicleType) {
+	public Map<String, Object> getVehicleListByType(int page, int size, String vehicleType,String search,LocalDate entryDate) {
 		String URL="http://localhost:8181/list/type?vehicleType="+vehicleType + "&page=" + page + "&size=" + size;
+		
+		 if (search != null && !search.isEmpty()) {
+			 URL += "&search=" + search;
+		    }
+		 if (entryDate != null) {
+		        URL += "&entryDate=" + entryDate;
+		    }
 		 ResponseEntity<Map> response = restTemplate.getForEntity(URL, Map.class);
 	            Map<String, Object> result = response.getBody();
 	        
