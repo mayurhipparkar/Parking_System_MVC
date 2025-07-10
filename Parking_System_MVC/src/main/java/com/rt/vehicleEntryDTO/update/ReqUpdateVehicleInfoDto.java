@@ -18,5 +18,6 @@ public class ReqUpdateVehicleInfoDto {
 	private String contactNumber;
 	private LocalDate entryDate;
 	private LocalTime entryTime;
-	private int userId;
+	private int sessionUserId;
+	private String sessionUserRole;
 }

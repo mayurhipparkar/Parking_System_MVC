@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RespAddVehicleDto {
+public class AddVehicleRespDto {
 	private int id;
 	private String vehicleType;
 	private String vehicleNumber;

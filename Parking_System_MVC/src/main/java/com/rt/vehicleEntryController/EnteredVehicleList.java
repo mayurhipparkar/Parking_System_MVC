@@ -18,6 +18,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rt.vehicleEntryDTO.select.RespEnteredVehicleListDTO;
 import com.rt.vehicleEntryServiceInterface.EnteredVehicleListInterface;
 
+import jakarta.servlet.http.HttpSession;
+
 @RequestMapping("/list")
 @Controller
 public class EnteredVehicleList {
@@ -25,9 +27,10 @@ public class EnteredVehicleList {
 	@Autowired
 	private EnteredVehicleListInterface enteredVehicleListInterface;
 	
-	@GetMapping("/home")
+	//it is used in list to redirect to home.
+	@GetMapping("/from-vehicle")
 	public String homePage() {
-		return "index";
+		return "redirect:/home";
 	}  
 	
 	
@@ -38,9 +41,11 @@ public class EnteredVehicleList {
             @RequestParam(defaultValue = "5") int size,
             @RequestParam(required = false) String search,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate entryDate,
-            Model model) {
-
-	Map<String, Object> response =enteredVehicleListInterface.getVehicleListByType(page,size,vehicleType,search,entryDate);
+            Model model,HttpSession session) {
+		
+		int sessionUserId=Integer.parseInt((String)session.getAttribute("userId"));
+		String sessionUserRole=(String)session.getAttribute("userRole");
+	Map<String, Object> response =enteredVehicleListInterface.getVehicleListByType(page,size,vehicleType,search,entryDate,sessionUserId,sessionUserRole);
 	ObjectMapper mapper = new ObjectMapper();
 	mapper.registerModule(new com.fasterxml.jackson.datatype.jsr310.JavaTimeModule()); // for LocalDate/Time
 	
@@ -71,6 +76,7 @@ public class EnteredVehicleList {
 	     return "vehicleEntry/twoWheelerList";	
 	}
 
+	
 	//it showing only four wheeler list with pagination.
 	@GetMapping("/fourWheeler-list/{vehicleType}")
 	    public String fourWheelerList(@PathVariable String vehicleType,
@@ -78,9 +84,11 @@ public class EnteredVehicleList {
 	                                       @RequestParam(defaultValue = "5") int size,
 	                                       @RequestParam(required = false) String search,
 	                                       @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate entryDate,
-	                                       Model model) {
-		 
-		 Map<String, Object> response =enteredVehicleListInterface.getVehicleListByType(page,size,vehicleType,search,entryDate);
+	                                       Model model,HttpSession session) {
+		int sessionUserId=Integer.parseInt((String)session.getAttribute("userId"));
+		String sessionUserRole=(String)session.getAttribute("userRole");
+		
+		 Map<String, Object> response =enteredVehicleListInterface.getVehicleListByType(page,size,vehicleType,search,entryDate,sessionUserId,sessionUserRole);
 		 ObjectMapper mapper = new ObjectMapper();
          mapper.registerModule(new com.fasterxml.jackson.datatype.jsr310.JavaTimeModule()); // for LocalDate/Time
 

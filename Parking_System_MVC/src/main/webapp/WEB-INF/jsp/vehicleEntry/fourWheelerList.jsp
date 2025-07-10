@@ -64,7 +64,7 @@
 	    
 	    <!-- Home Button -->
 	    <div class="col-md-2 mb-3"">
-	        <a href="${pageContext.request.contextPath}/list/home" class="btn btn-outline-warning">🏠 Home</a>
+	        <a href="${pageContext.request.contextPath}/list/from-vehicle" class="btn btn-outline-warning">🏠 Home</a>
 	    </div>
 	</div>
 
@@ -78,7 +78,6 @@
                 <thead class="table-light">
                 <tr>
                     <th>Sr NO.</th>
-                    <th>ID</th>
                     <th>Vehicle Type</th>
                     <th>Vehicle Number</th>
                     <th>Owner Name</th>
@@ -92,7 +91,6 @@
                 <c:forEach var="vehicle" items="${vehicleList}" varStatus="status">
                     <tr>
                         <td>${status.index + 1}</td>
-                        <td>${vehicle.entry_id}</td>
                         <td>${vehicle.vehicle_type}</td>
                         <td>${vehicle.vehicle_number}</td>
                         <td>${vehicle.owner_name}</td>

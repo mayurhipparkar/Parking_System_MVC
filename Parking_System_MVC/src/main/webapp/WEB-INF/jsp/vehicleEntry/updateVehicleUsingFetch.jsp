@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
      <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrapFiles/bootstrap.min.css" />
 <%@ include file="../module/header.jsp" %>
@@ -143,4 +143,4 @@ for (let i = 0; i < elements.length; i++) {
 	</script>
 
 <%@ include file="../module/footer.jsp" %>
-    <script src="${pageContext.request.contextPath}/bootstrapFiles/bootstrap.bundle.min.js"></script>
+    <script src="${pageContext.request.contextPath}/bootstrapFiles/bootstrap.bundle.min.js"></script> --%>

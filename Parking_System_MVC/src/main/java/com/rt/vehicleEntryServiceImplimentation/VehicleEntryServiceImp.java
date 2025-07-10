@@ -7,8 +7,8 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.rt.vehicleEntryDTO.add.ReqAddVehicleDto;
-import com.rt.vehicleEntryDTO.add.RespAddVehicleDto;
+import com.rt.vehicleEntryDTO.add.AddVehicleReqDto;
+import com.rt.vehicleEntryDTO.add.AddVehicleRespDto;
 import com.rt.vehicleEntryDTO.select.RespFetchVehicleInfo;
 import com.rt.vehicleEntryServiceInterface.VehicleEntryInterface;
 
@@ -18,21 +18,20 @@ public class VehicleEntryServiceImp implements VehicleEntryInterface{
 	private RestTemplate restTemplate;
 
 	@Override
-	public RespAddVehicleDto addVehicleInfo(ReqAddVehicleDto reqAddVehicleDto) {
+	public AddVehicleRespDto addVehicleInfo(AddVehicleReqDto addVehicleReqDto) {
 		String url="http://localhost:8181/entry/addVehicle";	
 		HttpHeaders headers = new HttpHeaders();
 	    headers.setContentType(MediaType.APPLICATION_JSON);
 	    
-		  HttpEntity<ReqAddVehicleDto> request=new HttpEntity<>(reqAddVehicleDto,headers);
+		  HttpEntity<AddVehicleReqDto> request=new HttpEntity<>(addVehicleReqDto,headers);
 		  
-		    RespAddVehicleDto respAddVehicleDto=restTemplate.postForObject(url, request, RespAddVehicleDto.class);
-			return respAddVehicleDto;
+		    AddVehicleRespDto addVehicleRespDto=restTemplate.postForObject(url, request, AddVehicleRespDto.class);
+			return addVehicleRespDto;
 	}
 	
 	@Override
-	public RespFetchVehicleInfo fetchVehicleData(int id) {
-		String url="http://localhost:8181/entry/fetchVehicleInfo?id=" + id;
-		
+	public RespFetchVehicleInfo fetchVehicleData(int id,int sessionUserId,String sessionUserRole) {
+		String url="http://localhost:8181/entry/fetchVehicleInfo?id=" + id+"&userId="+sessionUserId+"&userRole="+sessionUserRole;
 		RespFetchVehicleInfo respUpdate=restTemplate.getForObject(url,RespFetchVehicleInfo.class);
 		return respUpdate;
 	}

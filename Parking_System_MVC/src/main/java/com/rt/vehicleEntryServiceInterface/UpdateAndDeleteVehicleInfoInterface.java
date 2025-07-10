@@ -6,6 +6,6 @@ public interface UpdateAndDeleteVehicleInfoInterface {
 	
 	boolean updateVehicleInfoUsingId(ReqUpdateVehicleInfoDto reqUpdateVehicleInfoDto );
 	
-	void deleteVehicleInfoUsingId(int id);
+//	void deleteVehicleInfoUsingId(int id);
 
 }

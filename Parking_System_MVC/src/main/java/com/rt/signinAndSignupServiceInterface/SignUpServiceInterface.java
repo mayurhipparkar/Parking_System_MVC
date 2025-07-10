@@ -9,6 +9,6 @@ import com.rt.signupAndSignInDTO.RequestSignUpDTO;
 public interface SignUpServiceInterface {
 
 	
-	 boolean registerUser(RequestSignUpDTO reqDto);
+	 String registerUser(RequestSignUpDTO reqDto);
 
 }

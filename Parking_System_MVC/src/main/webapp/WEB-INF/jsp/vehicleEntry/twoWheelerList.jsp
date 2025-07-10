@@ -25,7 +25,7 @@
 	    </div>
 	
 	    <!-- Vehicle Number Filter -->
-	    <div class="col-md-4">
+	    <div class="col-md-3">
 	        <form method="get" action="${pageContext.request.contextPath}/list/twoWheeler-list/${type}">
 	            <div class="row g-1">
 	                <div class="col-md-7 col-sm-6">
@@ -56,10 +56,13 @@
 	            </div>
 	        </form>
 	    </div>
-	
+	<!-- All target Button -->
+		<div class="col-md-1 mb-3"">
+	        <a href="${pageContext.request.contextPath}/list/twoWheeler-list/${type}" class="btn btn-outline-warning">All</a>
+	    </div>
 	    <!-- Home Button -->
 	    <div class="col-md-2 mb-3"">
-	        <a href="${pageContext.request.contextPath}/list/home" class="btn btn-outline-warning">🏠 Home</a>
+	        <a href="${pageContext.request.contextPath}/list/from-vehicle" class="btn btn-outline-warning">🏠 Home</a>
 	    </div>
 	</div>
 
@@ -73,7 +76,6 @@
                 <thead class="table-light">
                 <tr>
                     <th>Sr NO.</th>
-                    <th>ID</th>
                     <th>Vehicle Type</th>
                     <th>Vehicle Number</th>
                     <th>Owner Name</th>
@@ -87,7 +89,6 @@
                 <c:forEach var="vehicle" items="${vehicleList}" varStatus="status">
                     <tr>
                         <td>${status.index + 1}</td>
-                        <td>${vehicle.entry_id}</td>
                         <td>${vehicle.vehicle_type}</td>
                         <td>${vehicle.vehicle_number}</td>
                         <td>${vehicle.owner_name}</td>
@@ -114,7 +115,7 @@
                         <c:forEach begin="0" end="${totalPages - 1}" var="i">
                             <li class="page-item ${i == currentPage ? 'active' : ''}">
                                 <a class="page-link"
-                                   href="${pageContext.request.contextPath}/list/fourWheeler-list/${type}?page=${i}&size=5&search=${search}&entryDate=${entryDate}">
+                                   href="${pageContext.request.contextPath}/list/twoWheeler-list/${type}?page=${i}&size=5&search=${search}&entryDate=${entryDate}">
                                     ${i + 1}
                                 </a>
                             </li>

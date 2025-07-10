@@ -36,7 +36,7 @@
 </head>
 <body class="bg-light">
 
-<h4 id="error-msg">${errorMsg}</h4>
+<h4 id="error-msg">${status}</h4>
 
 <div class="container my-5">
     <div class="row justify-content-center">
@@ -111,8 +111,8 @@
 </div>
 
 <script src="${pageContext.request.contextPath}/bootstrapFiles/bootstrap.bundle.min.js"></script>
-<script>
 
+<script>
 /* this is used to toggle the login and signup page  */
     function toggleForms() {
         const signInForm = document.getElementById('signInForm');
@@ -136,7 +136,7 @@
         	
           errorMsg.classList.add("fade-out");
           setTimeout(() => errorMsg.style.display = "none", 1000); // wait for fade
-        }, 2000);
+        }, 3000);
       }
     };
 

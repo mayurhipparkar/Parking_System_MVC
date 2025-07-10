@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ReqAddVehicleDto {
+public class AddVehicleReqDto {
 	
 	private String vehicleType;
 	private String vehicleNumber;
@@ -24,4 +24,5 @@ public class ReqAddVehicleDto {
 	 @DateTimeFormat(pattern = "HH:mm")
 	private LocalTime entryTime;
 	 private int userId;
+	 private String userRole;
 }

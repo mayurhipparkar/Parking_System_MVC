@@ -27,14 +27,15 @@ public class LoginSignUpController {
 		@PostMapping("/registeruser")
 		public String registerForm(@ModelAttribute RequestSignUpDTO reqDto,Model model,HttpSession session) {
 		
-			boolean userStatus=signUpService.registerUser(reqDto);
+			String userStatus=signUpService.registerUser(reqDto);
 			System.out.println(reqDto.getFullname()+" "+reqDto.getEmail());
-			System.out.println("check User status for signUp is it True or false "+userStatus);
+			System.out.println("check User status for signUp is it True or false :"+userStatus);
 		
-			if(userStatus) {	
-				return "index";
+			if(userStatus!=null) {	
+				model.addAttribute("status",userStatus);
+				return "signInAndSignUp";
 			}
-			model.addAttribute("errorMsg","User already exist , login OR duplicate email is not allowed...!");
+			
 			return "signInAndSignUp";
 			
 		}
@@ -58,17 +59,15 @@ public class LoginSignUpController {
 				session.setAttribute("userName",respLoginDto.getFullname());
 				session.setAttribute("userEmail",respLoginDto.getEmail());
 				session.setAttribute("userRole",respLoginDto.getRole());
-				return "index";
+				System.out.println("login role is :"+respLoginDto.getRole());
+					model.addAttribute("role",respLoginDto.getRole());
+					return "redirect:/home";
 			}
-			
-			model.addAttribute("errorMsg","Something Wrong try again....!");
+			 
+			model.addAttribute("status","Entered Something Wrong check email and password and try again OR need to be register....!");
 			return "signInAndSignUp";
 			
 		}
 		
 	// Login Login end.
-		
-		
-		
-
 }

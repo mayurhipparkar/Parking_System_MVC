@@ -17,13 +17,13 @@ public class SignUpServiceImp implements SignUpServiceInterface {
 
 	//here RestTemplate used to connect the two different project and transfer the data to rest Api.
 	@Override
-	public boolean registerUser(RequestSignUpDTO signUpDto) {
+	public String registerUser(RequestSignUpDTO signUpDto) {
 		String url="http://localhost:8181/main/signup";
 		HttpHeaders headers = new HttpHeaders();
 	    headers.setContentType(MediaType.APPLICATION_JSON);
 	    
 	    HttpEntity<RequestSignUpDTO> request = new HttpEntity<>(signUpDto, headers);
-	    Boolean userStatus=restTemplate.postForObject(url, request, Boolean.class);
+	    String userStatus=restTemplate.postForObject(url, request, String.class);
 		
 		return userStatus; 
 	}
