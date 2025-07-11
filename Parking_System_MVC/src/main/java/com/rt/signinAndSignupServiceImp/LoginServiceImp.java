@@ -18,7 +18,7 @@ public class LoginServiceImp implements LoginServiceInterface {
 	//here RestTemplate used to connect the two different project and transfer the data to rest Api.
 	@Override
 	public ResponseLoginDTO loginUser(RequestLoginDTO reqLoginDto) {
-		String url="http://localhost:8181/main/login";
+		String url="http://localhost:8181/users/login";
 		HttpHeaders headers = new HttpHeaders();
 	    headers.setContentType(MediaType.APPLICATION_JSON);
 	    

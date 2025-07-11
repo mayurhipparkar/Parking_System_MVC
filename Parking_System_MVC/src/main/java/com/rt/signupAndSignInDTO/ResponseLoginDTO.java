@@ -13,5 +13,6 @@ public class ResponseLoginDTO {
 	private String fullname;
 	private String email;
 	private String role;
+	private String status;
 
 }

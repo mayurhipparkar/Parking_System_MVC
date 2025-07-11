@@ -27,12 +27,12 @@ public class LoginSignUpController {
 		@PostMapping("/registeruser")
 		public String registerForm(@ModelAttribute RequestSignUpDTO reqDto,Model model,HttpSession session) {
 		
-			String userStatus=signUpService.registerUser(reqDto);
+			String userMessage=signUpService.registerUser(reqDto);
 			System.out.println(reqDto.getFullname()+" "+reqDto.getEmail());
-			System.out.println("check User status for signUp is it True or false :"+userStatus);
+			System.out.println("check User status for signUp is it True or false :"+userMessage);
 		
-			if(userStatus!=null) {	
-				model.addAttribute("status",userStatus);
+			if(userMessage!=null) {	
+				model.addAttribute("status",userMessage);
 				return "signInAndSignUp";
 			}
 			
@@ -54,17 +54,28 @@ public class LoginSignUpController {
 			//setting session
 			
 			if(respLoginDto!=null) { 
-				String id = String.valueOf(respLoginDto.getId());
-				session.setAttribute("userId",id);
-				session.setAttribute("userName",respLoginDto.getFullname());
-				session.setAttribute("userEmail",respLoginDto.getEmail());
-				session.setAttribute("userRole",respLoginDto.getRole());
-				System.out.println("login role is :"+respLoginDto.getRole());
+				
+					if(!"Active".equalsIgnoreCase(respLoginDto.getStatus())) {
+						
+						model.addAttribute("status","User is not active...!");
+						
+			            return "signInAndSignUp";
+					}
+					
+					String id = String.valueOf(respLoginDto.getId());
+					session.setAttribute("userId",id);
+					session.setAttribute("userName",respLoginDto.getFullname());
+					session.setAttribute("userEmail",respLoginDto.getEmail());
+					session.setAttribute("userRole",respLoginDto.getRole());
+					System.out.println("login role is :"+respLoginDto.getRole());
+						
 					model.addAttribute("role",respLoginDto.getRole());
+					
 					return "redirect:/home";
 			}
 			 
-			model.addAttribute("status","Entered Something Wrong check email and password and try again OR need to be register....!");
+			model.addAttribute("status","Invalid email or password...!");
+			
 			return "signInAndSignUp";
 			
 		}

@@ -1,4 +1,5 @@
  <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,12 +18,15 @@
         }
         
         #error-msg{
-        	color:red;
-        	text-align:center;
+         background-color: lightgreen;
+        	color:black;
         	padding:5px;
-        	margin-top:10px;
-        	border: 2px solid cyan;
-        	border-radius: 20px;
+        	word-spacing:1px;
+        	letter-spacing:1px;
+        	
+        	font-size:20px;
+        	margin:10px;
+       		border: 2px solid black;
         	display:none;
         	
         	
@@ -36,9 +40,12 @@
 </head>
 <body class="bg-light">
 
-<h4 id="error-msg">${status}</h4>
+	<c:if test="${not empty status}">
+	    <div id="error-msg" class="alert alert-info text-center">${status}</div>
+	</c:if>
 
-<div class="container my-5">
+
+<div class="container my-3">
     <div class="row justify-content-center">
         <div class="col-md-5">
             <div class="card p-4 shadow">
@@ -68,6 +75,7 @@
                     <h4 class="text-center mb-4">Sign Up</h4>
                     <form action="registeruser" method="post">
                         <div class="mb-3">
+                      
                             <label for="signupFullname" class="form-label">Full Name</label>
                             <input type="text" class="form-control" id="signupFullname" name="fullname" placeholder="Enter your full name" required />
                         </div>
